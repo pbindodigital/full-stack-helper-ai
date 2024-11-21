@@ -33,27 +33,12 @@ The table belows lists the available kits, which are grouped into four categorie
 </thead>
   
 <tbody>
-
-<tr>
-<td width="20%"><a href="data_extraction/README.md">Data Extraction</a></td>
-<td width="40%">Series of notebooks that demonstrate methods for extracting text from documents in different input formats.</td>
-<td width="20%"> SambaNova Cloud, SambaStudio</td>
-<td width="20%"> Data Ingestion & Preparation </td>  
-</tr>
-
 <tr>
 <td width="20%"><a href="code_copilot/README.md">Code Copilot</a></td>
 <td width="40%">This example guide shows a simple integration with Continue VSCode and JetBrains extension using SambaNova platforms, to use Sambanova's hosted models as your custom coding assistant. </td>
 <td width="20%">SambaStudio</td>
 <td width="20%"> Advanced AI Capabilities </td>  
-</tr>
 
-<tr>
-<td width="20%"><a href="google_integration/README.md"> SambaCloud - Google Integration</a></td>
-<td width="40%">App Scripts intended for those with SambaCloud API keys to integrate LLMs into Google Workspaces.</td>
-<td width="20%"> SambaNova Cloud</td>
-<td width="20%"> Advanced AI Capabilities </td>
-</tr>
 
 </tbody>
 </table>
