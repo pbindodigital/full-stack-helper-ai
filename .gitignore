@@ -1,0 +1,23 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+*.env
+
+# Environment variables file
+.env
+
+# IDE specific files (e.g. VSCode, PyCharm)
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Other build artifacts or generated files
+*.db
+*.sqlite
+*.tar.gz
+*.egg-info/
