@@ -1,34 +1,45 @@
-<a href="https://sambanova.ai/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="../images/SambaNova-light-logo-1.png" height="60">
-  <img alt="SambaNova logo" src="../images/SambaNova-dark-logo-1.png" height="60">
-</picture>
-</a>
+## Inspiration
+The inspiration behind **Full Stack Helper AI** comes from the growing need for developers to streamline and accelerate the development process, especially in full-stack projects. The complexity of building CRUD operations, managing databases, handling frontend frameworks, and ensuring consistent UI/UX across various platforms can be time-consuming. With the power of AI, **Full Stack Helper AI** aims to automate these repetitive tasks, enabling developers to focus on building impactful features rather than spending time on boilerplate code.
 
-Prompt Engineering Starter Kit
-======================
+## What it does
+**Full Stack Helper AI** is an AI-powered tool that assists developers in generating various components of a web application. It simplifies tasks such as:
+1. **CRUD Code Generation**: Automatically generates CRUD operations for different frameworks like Laravel, Node.js, and NestJS based on user input.
+2. **CSS Framework Conversion**: Converts custom CSS into different CSS frameworks such as Tailwind, Bootstrap, and Materialize.
+3. **Custom UI Generation**: Allows developers to choose their desired frontend frameworks (React, Next.js, Vue.js) and apply custom fonts.
+4. **Column Definition for Databases**: Helps developers define database columns with various attributes (e.g., required, unique, relations), making it easy to generate database models and tables.
 
-<!-- TOC -->
+## How we built it
+The project was built using the following technologies and steps:
+1. **Backend**: The backend is powered by **Python**, where the AI logic is handled using **Llama2** and **Llama3** models, accessed via the **langchain** library. The backend generates the necessary code or outputs based on user input, such as generating CRUD code or converting CSS.
+2. **Frontend**: We used **Streamlit**, a Python-based UI framework, to create an interactive web application where users can input data and see AI-generated results in real time.
+3. **AI Integration**: **Langchain** is used to orchestrate the interactions with the AI models, allowing for more flexible and complex conversations with the model, including handling structured prompts for generating code or CSS.
+4. **Docker**: The entire application is containerized using **Docker** to ensure that it runs consistently across different environments. A Dockerfile builds the `prompt_engineering` service, which interacts with the AI models.
 
-- [Prompt Engineering Starter Kit](#prompt-engineering-starter-kit)
-- [Before you begin](#before-you-begin)
-    - [Clone this repository](#clone-this-repository)
-    - [Set up the models and config file](#set-up-the-models-and-config-file)
-        - [Set up the inference endpoint, configs and environment variables](#set-up-the-inference-endpoint-configs-and-environment-variables)
-- [Deploy the starter kit GUI](#deploy-the-starter-kit-gui)
-    - [Option 1: Use a virtual environment](#option-1-use-a-virtual-environment)
-    - [Option 2: Deploy the starter kit in a Docker container](#option-2-deploy-the-starter-kit-in-a-docker-container)
-- [Use the starterkit GUI](#use-the-starterkit-gui)
-- [Customize the starter kit](#customize-the-starter-kit)
-    - [Include additional models](#include-additional-models)
-        - [Include models using SambaNova Cloud](#include-models-using-sambanova-cloud)
-        - [Include models using SambaStudio](#include-models-using-sambastudio)
-    - [Edit a prompt template](#edit-a-prompt-template)
-    - [Add prompt templates and use cases](#add-prompt-templates-and-use-cases)
-- [Examples, third-party tools, and data sources](#examples-third-party-tools-and-data-sources)
+## Challenges we ran into
+1. **Model Tuning**: Ensuring the AI models (Llama2 and Llama3) understood and responded correctly to structured, domain-specific prompts for generating CRUD operations and CSS conversion was challenging.
+2. **UI/UX Design**: Designing an intuitive and responsive UI in Streamlit to handle multiple input fields, checkboxes, and dynamic form elements (for things like custom fonts or relationships) required thoughtful layout planning.
+3. **Framework Compatibility**: Ensuring that the generated CRUD operations and CSS conversions were compatible with the various frontend and backend frameworks added complexity, particularly with different syntax and architecture.
+4. **Real-Time Feedback**: Implementing a smooth experience for providing real-time feedback from the AI models to the user (e.g., generating code snippets) required optimizing API calls and response times.
 
-<!-- /TOC -->
-Add prompt templates / use cases
+## Accomplishments that we're proud of
+1. **AI Integration**: Successfully integrating AI models like Llama2 and Llama3 into a full-stack tool that can generate code and convert CSS frameworks in real time.
+2. **Dynamic UI**: Creating a dynamic UI using **Streamlit** that allows users to easily define tables, columns, and frontend frameworks, with seamless user experience across different input types.
+3. **Streamlining Development**: The tool significantly speeds up the development process for backend code generation (CRUD operations) and frontend styling (CSS framework conversion).
+4. **Customizable Features**: The ability to add custom requests (e.g., generating slugs from titles, custom CSS properties) and other features makes the project highly adaptable to various use cases.
+
+## What we learned
+1. **AI-Driven Development**: We learned a lot about how AI models like Llama2 and Llama3 can be utilized to automate development tasks and improve productivity.
+2. **Streamlit**: We gained experience in building responsive and user-friendly interfaces using **Streamlit**, which is powerful for rapid prototyping and building data apps.
+3. **Model Fine-Tuning**: We discovered the importance of refining prompts and understanding the capabilities of large language models to get the desired output.
+4. **Docker for Consistency**: Using **Docker** for containerization ensured that the app runs seamlessly across different environments, which is essential for deploying and scaling applications.
+
+## What's next for Full Stack Helper AI
+1. **Enhanced Code Generation**: We plan to enhance the code generation feature, adding support for more advanced use cases such as API generation, authentication setup, and more complex database relationships.
+2. **Additional Framework Support**: We'll expand the list of supported frameworks for both frontend and backend, adding popular frameworks like Angular, Vue, Django, Flask, etc.
+3. **Deployment and Hosting**: We aim to deploy the application on cloud platforms (e.g., AWS, Azure) and make it accessible for others to use via a public web interface.
+4. **User Customization**: Future versions will allow users to define more custom rules and preferences (e.g., specific code styling conventions) to generate even more personalized results.
+5. **Integration with Version Control**: We may add integration with GitHub or GitLab to allow users to push generated code directly to their repositories.
+
 # Before you begin
 
 You have to set up your environment before you can run the starter kit. 
