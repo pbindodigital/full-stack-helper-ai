@@ -1,490 +1,179 @@
-<a href="https://sambanova.ai/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/SambaNova-light-logo-1.png" height="60">
-  <img alt="SambaNova logo" src="./images/SambaNova-dark-logo-1.png" height="60">
-</picture>
-</a>
+## Inspiration
+The inspiration behind **Full Stack Helper AI** comes from the growing need for developers to streamline and accelerate the development process, especially in full-stack projects. The complexity of building CRUD operations, managing databases, handling frontend frameworks, and ensuring consistent UI/UX across various platforms can be time-consuming. With the power of AI, **Full Stack Helper AI** aims to automate these repetitive tasks, enabling developers to focus on building impactful features rather than spending time on boilerplate code.
 
-# SambaNova AI Starter Kits
+## What it does
+**Full Stack Helper AI** is an AI-powered tool that assists developers in generating various components of a web application. It simplifies tasks such as:
+1. **CRUD Code Generation**: Automatically generates CRUD operations for different frameworks like Laravel, Node.js, and NestJS based on user input.
+2. **CSS Framework Conversion**: Converts custom CSS into different CSS frameworks such as Tailwind, Bootstrap, and Materialize.
+3. **Custom UI Generation**: Allows developers to choose their desired frontend frameworks (React, Next.js, Vue.js) and apply custom fonts.
+4. **Column Definition for Databases**: Helps developers define database columns with various attributes (e.g., required, unique, relations), making it easy to generate database models and tables.
 
-# Overview
+## How we built it
+The project was built using the following technologies and steps:
+1. **Backend**: The backend is powered by **Python**, where the AI logic is handled using **Llama2** and **Llama3** models, accessed via the **langchain** library. The backend generates the necessary code or outputs based on user input, such as generating CRUD code or converting CSS.
+2. **Frontend**: We used **Streamlit**, a Python-based UI framework, to create an interactive web application where users can input data and see AI-generated results in real time.
+3. **AI Integration**: **Langchain** is used to orchestrate the interactions with the AI models, allowing for more flexible and complex conversations with the model, including handling structured prompts for generating code or CSS.
+4. **Docker**: The entire application is containerized using **Docker** to ensure that it runs consistently across different environments. A Dockerfile builds the `prompt_engineering` service, which interacts with the AI models.
 
-SambaNova AI Starter Kits are a collection of open-source examples and guides designed to facilitate the deployment of AI-driven use cases for both developers and enterprises.
+## Challenges we ran into
+1. **Model Tuning**: Ensuring the AI models (Llama2 and Llama3) understood and responded correctly to structured, domain-specific prompts for generating CRUD operations and CSS conversion was challenging.
+2. **UI/UX Design**: Designing an intuitive and responsive UI in Streamlit to handle multiple input fields, checkboxes, and dynamic form elements (for things like custom fonts or relationships) required thoughtful layout planning.
+3. **Framework Compatibility**: Ensuring that the generated CRUD operations and CSS conversions were compatible with the various frontend and backend frameworks added complexity, particularly with different syntax and architecture.
+4. **Real-Time Feedback**: Implementing a smooth experience for providing real-time feedback from the AI models to the user (e.g., generating code snippets) required optimizing API calls and response times.
 
-To run these examples, you can obtain a free API key using [SambaNova Cloud](https://cloud.sambanova.ai). Alternatively, if you are a current SambaNova customer, you can deploy your models using [SambaStudio](https://docs.sambanova.ai/sambastudio/latest/index.html). Most of the code examples are written in Python, although the concepts can be applied to any programming language.
+## Accomplishments that we're proud of
+1. **AI Integration**: Successfully integrating AI models like Llama2 and Llama3 into a full-stack tool that can generate code and convert CSS frameworks in real time.
+2. **Dynamic UI**: Creating a dynamic UI using **Streamlit** that allows users to easily define tables, columns, and frontend frameworks, with seamless user experience across different input types.
+3. **Streamlining Development**: The tool significantly speeds up the development process for backend code generation (CRUD operations) and frontend styling (CSS framework conversion).
+4. **Customizable Features**: The ability to add custom requests (e.g., generating slugs from titles, custom CSS properties) and other features makes the project highly adaptable to various use cases.
 
-Questions? Just <a href="https://community.sambanova.ai/latest" target="_blank">message us</a> on SambaNova Community <a href="https://community.sambanova.ai/latest" target="_blank"><img src="https://github.com/sambanova/ai-starter-kit/assets/150964187/aef53b52-1dc0-4cbf-a3be-55048675f583" alt="Community" width="22"/></a> or <a href="https://github.com/sambanova/ai-starter-kit/issues/new/choose" target="_blank">create an issue</a> in GitHub. We're happy to help live!
+## What we learned
+1. **AI-Driven Development**: We learned a lot about how AI models like Llama2 and Llama3 can be utilized to automate development tasks and improve productivity.
+2. **Streamlit**: We gained experience in building responsive and user-friendly interfaces using **Streamlit**, which is powerful for rapid prototyping and building data apps.
+3. **Model Fine-Tuning**: We discovered the importance of refining prompts and understanding the capabilities of large language models to get the desired output.
+4. **Docker for Consistency**: Using **Docker** for containerization ensured that the app runs seamlessly across different environments, which is essential for deploying and scaling applications.
 
-# Available AI Starter Kits
+## What's next for Full Stack Helper AI
+1. **Enhanced Code Generation**: We plan to enhance the code generation feature, adding support for more advanced use cases such as API generation, authentication setup, and more complex database relationships.
+2. **Additional Framework Support**: We'll expand the list of supported frameworks for both frontend and backend, adding popular frameworks like Angular, Vue, Django, Flask, etc.
+3. **Deployment and Hosting**: We aim to deploy the application on cloud platforms (e.g., AWS, Azure) and make it accessible for others to use via a public web interface.
+4. **User Customization**: Future versions will allow users to define more custom rules and preferences (e.g., specific code styling conventions) to generate even more personalized results.
+5. **Integration with Version Control**: We may add integration with GitHub or GitLab to allow users to push generated code directly to their repositories.
 
-The table belows lists the available kits, which are grouped into four categories: 1) Data Ingestion & Preparation, 2) Model Development & Optimization, 3) Intelligent Information Retrieval, and 4) Advanced AI Capabilities. 
+# Before you begin
 
-**Note**: For each kit, we specify whether it is compatible with SambaNova Cloud, SambaStudio, or both.
+You have to set up your environment before you can run the starter kit. 
 
-<table style="width: 100%;">
-<thead>
-<tr>
-<th width="20%">Name</th>
-<th width="45%">Kit Description</th>
-<th width="20%">Compatible APIs</th>
-<th width="15%">Category</th>
-  
-</tr>
-</thead>
-  
-<tbody>
-<tr>
-<td width="20%"><a href="code_copilot/README.md">Code Copilot</a></td>
-<td width="40%">This example guide shows a simple integration with Continue VSCode and JetBrains extension using SambaNova platforms, to use Sambanova's hosted models as your custom coding assistant. </td>
-<td width="20%">SambaStudio</td>
-<td width="20%"> Advanced AI Capabilities </td>  
+## Clone this repository
 
-
-</tbody>
-</table>
-
-# Getting Started 
-
-## Getting a SambaNova API key and setting your generative models
-
-Currently, there are two ways to obtain an API key from SambaNova. You can get a free API key using SambaNova Cloud. Alternatively, if you are a current SambaNova customer, you can deploy your models using SambaStudio. 
-
-### Use SambaNova Cloud (Option 1)
-
-For more information and to obtain your API key, visit the [SambaNova Cloud webpage](https://cloud.sambanova.ai).
-
-To integrate SambaNova Cloud LLMs with this AI starter kit, update the API information by configuring the environment variables in the `ai-starter-kit/.env` file:
-
-- Create the `.env` file at `ai-starter-kit/.env` if the file does not exist.
-- Enter the SambaNova Cloud API key in the `.env` file, for example:
-  
-```bash
-SAMBANOVA_API_KEY = "456789abcdef0123456789abcdef0123"
+Clone the starter kit repo.
+```
+git clone https://github.com/pbindodigital/full-stack-helper-ai.git
 ```
 
-### Use SambaStudio (Option 2)
+## Set up the models and config file
 
-Begin by deploying your LLM of choice (e.g., Llama 3 8B) to an endpoint for inference in SambaStudio. Use either the GUI or CLI, as described in the [SambaStudio endpoint documentation](https://docs.sambanova.ai/sambastudio/latest/endpoints.html).
+### Set up the inference endpoint, configs and environment variables
 
-To integrate your LLM deployed on SambaStudio with this AI starter kit, update the API information by configuring the environment variables in the `ai-starter-kit/.env` file:
+The next step is to set up your environment variables to use one of the models available from SambaNova. If you're a current SambaNova customer, you can deploy your models with SambaStudio. If you are not a SambaNova customer, you can self-service provision API endpoints using SambaNova Cloud API.
 
-- Create the `.env` file at `ai-starter-kit/.env` if the file does not exist.
-- Set your SambaStudio variables. For example, an endpoint with the URL
-"https://api-stage.sambanova.net/api/predict/nlp/12345678-9abc-def0-1234-56789abcdef0/456789ab-cdef-0123-4567-89abcdef0123"
-is entered in the `.env` file as:
+- If using **SambaNova Cloud** Please follow the instructions [here](../README.md#use-sambanova-cloud-option-1) for setting up your environment variables.
+    Then in the [config file](./config.yaml) set the llm `api` variable to `"sncloud"` and set the `select_expert` config depending on the model you want to use.
 
-``` bash
-SAMBASTUDIO_BASE_URL="https://api-stage.sambanova.net/api/predict/nlp/12345678-9abc-def0-1234-56789abcdef0/456789ab-cdef-0123-4567-89abcdef0123"
-SAMBASTUDIO_API_KEY="89abcdef-0123-4567-89ab-cdef01234567"
-```
+- If using **SambaStudio** Please follow the instructions [here](../README.md#use-sambastudio-option-2) for setting up endpoint and your environment variables.
+    Then in the [config file](./config.yaml) set the llm `api` variable to `"sambastudio"`, set the `CoE` and `select_expert` configs if using a CoE endpoint.
 
-## Setting your embedding models
 
-Currently, you can set your embedding models on CPU or SambaStudio. Note that embedding models are not available yet through SambaNova Cloud, but they will be in future releases.
+# Deploy the starter kit GUI
 
-### Use CPU embedding (Option 1)
+We recommend that you run  the the starter kit in a virtual environment or use a container.
 
-You can run the Hugging Face embedding models locally on CPU. In this case, no information is needed in the `.env` file.
+## Option 1: Use a virtual environment
 
-### Use SambaStudio embedding (Option 2)
+If you want to use virtualenv or conda environment
 
-Alternatively, you can use SambaStudio embedding model endpoints instead of the CPU-based HugginFace embeddings to increase inference speed. Please follow [this guide](https://docs.sambanova.ai/sambastudio/latest/e5-large.html#_deploy_an_e5_large_v2_endpoint) to deploy your SambaStudio embedding model.
+1. Install and update pip.
 
-To integrate your embedding model deployed on SambaStudio with this AI starter kit, update the API information by configuring the environment variables in the `ai-starter-kit/.env` file:
+    ```bash
+    cd pbindodigital/full-stack-helper-ai
+    python3 -m venv prompt_engineering_env
+    source prompt_engineering_env/bin/activate
+    pip install -r requirements.txt
+    ```
+2. Run the following command:
+    ```bash
+    streamlit run streamlit/app.py --browser.gatherUsageStats false 
+    ```
 
-- Create the `.env` file at `ai-starter-kit/.env` if the file does not exist.
-- Set your SambaStudio variables. For example, an endpoint with the URL
-`"https://api-stage.sambanova.net/api/predict/generic/12345678-9abc-def0-1234-56789abcdef0/456789ab-cdef-0123-4567-89abcdef0123"`
-is entered in the `.env` file as:
+You should see the following user interface:
 
-``` bash
-SAMBASTUDIO_EMBEDDINGS_BASE_URL="https://api-stage.sambanova.net"
-SAMBASTUDIO_EMBEDDINGS_BASE_URI="api/predict/generic"
-SAMBASTUDIO_EMBEDDINGS_PROJECT_ID="12345678-9abc-def0-1234-56789abcdef0"
-SAMBASTUDIO_EMBEDDINGS_ENDPOINT_ID="456789ab-cdef-0123-4567-89abcdef0123"
-SAMBASTUDIO_EMBEDDINGS_API_KEY="89abcdef-0123-4567-89ab-cdef01234567"
-```
+![capture of prompt_engineering_demo](./docs/prompt_enginnering_app.png)
 
-## Run the desired starter kit
 
-Go to the `README.md` of the starter kit you want to use and follow the instructions. See [Available AI Starter Kits](#available-ai-starter-kits).
+## Option 2: Deploy the starter kit in a Docker container 
 
-## Additional information
+If you want to use Docker:
 
-<details>
-<summary>Use Sambanova's LLMs and Langchain wrappers</summary>
+1. Update the `SAMBASTUDIO_KEY`, `SNAPI`, `SNSDK` args in [docker-compose.yaml file](docker-compose.yaml)
 
-### LLM Wrappers
+2. Run the command:
 
-Set your environment as shown in [integrate your model](#integrate-your-model-in-the-starter-kit).
+    docker-compose up --build
 
-#### Using Sambastudio LLMs
+You will be prompted to go to the link (http://localhost:8501/) in your browser where you will be greeted with the streamlit page as above.
 
-1. Import the **SambaStudio** langchain community wrapper in your project and define your **SambaStudio* LLM:
 
-- If using a CoE endpoint:
+# Use the starterkit GUI 
 
-```python
-from langchain_community.llms.sambanova import SambaStudio
+To use the starter kit, follow these steps:
 
-load_dotenv('.env')
+1. Confirm the LLM to use from the text under **Model display** (Currently, only Llama2 and Llama3 models are available). You'll see a description of the architecture, prompting tips, and the metatag format required to optimize the model's performance.
 
-llm = SambaStudio(
-    model_kwargs={
-      "do_sample": False,
-      "max_tokens_to_generate": 512,
-      "temperature": 0.0,
-      "select_expert": "Meta-Llama-3-8B-Instruct",
-      "process_prompt": "False"
-      },
-)
-```
+2. In **Use Case for Sample Prompt**, select a template. You have the following choices:
 
-- If using a single model endpoint
+    - **General Assistant**: Provides comprehensive assistance on a wide range of topics, including answering questions, offering explanations, and giving advice. It's ideal for general knowledge, trivia, educational support, and everyday inquiries.
 
-```python
-from langchain_community.llms.sambanova import SambaStudio
+    - **Document Search**: Specializes in locating and briefing relevant information from large documents or databases. Useful for research, data analysis, and extracting key points from extensive text sources.
 
-load_dotenv('.env')
+    - **Product Selection**: Assists in choosing products by comparing features, prices, and reviews. Ideal for shopping decisions, product comparisons, and understanding the pros and cons of different items.
 
-llm = SambaStudio(
-    model_kwargs={
-      "do_sample": False,
-      "max_tokens_to_generate": 512,
-      "temperature": 0.0,
-      "process_prompt": "False"
-      },
-)
-```
+    - **Code Generation**: Helps in writing, debugging, and explaining code. Useful for software development, learning programming languages, and automating simple tasks through scripting.
 
-2. Use the model
+    - **Summarization**: Outputs a summary based on a given context. Essential for condensing large volumes of text 
 
-```python
-llm.invoke("your prompt")
-```
+3. In the **Prompt** field, review and edit the input to the model, or use directly the default prompt. 
 
-See [utils/usage.ipynb](./utils/usage.ipynb) for an example.
+4. Click the **Send** button to submit the prompt. The model will generate and display the response.
 
-### Using SambaNova Cloud LLMs
+# Customize the starter kit
 
-1. Import our **SambaNovaCloud** langchain internal wrapper in your project and define your **SambaNovaCloud** LLM:
+You have several options for customizing this starter kit. 
 
+## Include additional models
 
-```python
-from util..model_wrappers.llms.langchain_llms import SambaNovaCloud
+You can include more models with the kit. They will then show up in the **Model display** in the GUI according to the name of the `select_expert` value in the config file. 
 
-load_dotenv('.env')
+### Include models using SambaNova Cloud
 
-llm = SambaNovaCloud(model='llama3-70b')
-```
+If you're using a SambaNova Cloud endpoint, follow these steps:
+ 
+1. In the `config.json` file, add the `select_expert` name. Then, include the model description in the `models` section, like the ones already there. Ensure that both names are compatible. Example:
+    - `select_expert` value: `Mistral-7B-Instruct-v0.2`
+    - model name under `models`: `Mistral`  
+2. Populate the API key provided for SambaNova Cloud.
+3. Use `create_prompt_yamls` as a tool to create the prompts needed for your new model. These prompts will have a similar structure as the ones already existing in `prompt_engineering/prompts` folder, but will follow the metatags needed for the LLM model we want to add.
 
-2. Use the model
+### Include models using SambaStudio
 
-```python
-llm.invoke("your prompt")
-```
+If you're using a SambaStudio endpoint, follow these steps:
 
-See [utils/usage.ipynb](./utils/usage.ipynb) for an example.
+1. Create a SambaStudio endpoint for inference. 
+2. In the `config.json` file, add the `select_expert` name. Then, include the model description in the `models` section, like the ones already there. Ensure that both names are compatible. Example:
+    - `select_expert` value: `Mistral-7B-Instruct-v0.2`
+    - model name under `models`: `Mistral`  
+3. Populate key variables on your env file.
+4. Use `create_prompt_yamls` as a tool to create the prompts needed for your new model. These prompts will have a similar structure as the ones already existing in `prompt_engineering/prompts` folder, but will follow the metatags needed for the LLM model we want to add.
 
-### Embedding Wrapper
+## Edit a prompt template
 
-1. Import the **SambaStudioEmbedding** langchain community wrapper in your project and define your **SambaStudioEmbeddings** embedding:
+To change a template: 
 
-- If using a CoE endpoint
+1. Edit the `create_prompt_yamls()` method in `src/llm_management.py`.
+2. Execute the method to modify the prompt yaml file in the `prompts` folder.
 
-```python
-from langchain_community.embeddings import SambaStudioEmbeddings
+## Add prompt templates and use cases
 
-load_dotenv('.env')
+To add a prompt template:
 
-embedding = SambaStudioEmbeddings(
-              batch_size=1,
-              model_kwargs = {
-                  "select_expert":e5-mistral-7b-instruct
-                  }
-              )
-```
+1. Follow the instructions in [Edit a template](#edit-a-prompt-template).
+2. Include the template use case in the `use_cases` list of `config.yaml` file.
 
-- If using a single embedding model endpoint
+# Examples, third-party tools, and data sources
 
-```python
-from langchain_community.embeddings import SambaStudioEmbeddings
+For further examples, we encourage you to visit any of the following resources:
+- [Awesome chatgpt prompts](https://github.com/f/awesome-chatgpt-prompts)
+- [Smith - Langchain hub](https://smith.langchain.com/hub)
 
-load_dotenv('.env')
+# Third-party tools and data sources
 
-embedding = SambaStudioEmbeddings(batch_size=32)
-```
-
-> Note that using different embedding models (cpu or sambastudio) may change the results, and change the way they are set and their parameters
-
-2. Use your embedding model in your langchain pipeline
-
-See [utils/usage.ipynb](./utils/usage.ipynb) for an example.
-
-### Javascript Example
-
-1. Before running the code, ensure that you have Node.js installed on your system. You can download the latest version from the official Node.js [website](https://nodejs.org/en).
-
-2. Set Up the Environment. To set up the environment, run the following commands in your terminal:
-
-``` bash
-npm init -y
-```
-
-``` bash
-npm install @langchain/openai @langchain/core
-```
-
-> These commands will create a new package.json file and install the required dependencies.
-
-3. Create a new file named `app.js` and add the following code:
-
-```javascript
-import { ChatOpenAI } from "@langchain/openai";
-
-const SambaNovaCloudBaseURL = "https://api.sambanova.ai/v1";
-const apiKey = "your-api-key";
-
-const SambaNovaCloudChatModel = new ChatOpenAI({
-  temperature: 0.9,
-  model: "Meta-Llama-3.1-70B-Instruct",
-  configuration: {
-    baseURL: SambaNovaCloudBaseURL,
-    apiKey: apiKey,
-  },
-});
-
-const response = await SambaNovaCloudChatModel.invoke("Hi there, tell me a joke!");
-console.log(response.content);
-```
-
-4. To run the app, execute the following command in your terminal:
-
-``` bash
-node app.js
-```
-
----
-
-</details>
-
-<details>
-<summary>Setting up your virtual environment</summary><br/>
-
-There are two approaches to setting up your virtual environment for the AI Starter Kits:
-
-1. **Individual Kit Setup (Traditional Method)**
-2. **Base Environment Setup (WIP)**
-
-### 1. Individual Kit Setup
-
-Each starter kit has its own `README.md` and `requirements.txt` file. You can set up a separate virtual environment for each kit by following the instructions in their respective directories. This method is suitable if you're only interested in running a single kit or prefer isolated environments for each project.
-
-To use this method:
-1. Navigate to the specific kit's directory
-2. Create a virtual environment
-3. Install the requirements
-4. Follow the kit-specific instructions
-
-### 2. Base Environment Setup 
-
-For users who plan to work with multiple kits or prefer a unified development environment, we recommend setting up a base environment. This approach uses a Makefile to automate the setup of a consistent Python environment that works across all kits.
-
-Benefits of the base environment approach:
-- Consistent Python version across all kits
-- Centralized dependency management
-- Simplified setup process
-- Easier switching between different kits
-
-#### Prerequisites
-
-- **pyenv**: The Makefile will attempt to install pyenv if it's not already installed.
-- **Docker**: (Optional) If you want to use the Docker-based setup, ensure Docker is installed on your system.
-
-#### What the Base Setup Does
-
-1. Installs pyenv and Poetry if they are not already installed.
-2. Sets up a Python virtual environment using a specified Python version (default is 3.11.3).
-3. Installs all necessary dependencies for the base environment.
-4. Sets up the parsing service required by some kits.
-5. Installs system dependencies like Tesseract OCR and Poppler.
-6. Provides Docker-based setup options for consistent environments across different systems.
-
-
-
-#### Setting Up the Base Environment
-
-
-1. **Install and Set Up the Base Environment:**
-
-```bash
-make all
-```
-This command will set up the base ai-starter-kit environment, including installing all necessary tools and dependencies.
-
-2. **Activate the Base Environment:**
-
-```bash
-source .venv/bin/activate
-```
-
-3. **Navigate to Your Chosen Starter Kit:**
-```bash
-cd path/to/starter_kit
-```
-Within the starter kit there will be instructions on how to start the kit. You can skip the virtual environment creation 
-part in the kits README.md as we've done it here.
-
-
-
-### Parsing Service Management
-For certain kits, we utilise a standard parsing service. By Default it's started automatically with the base environment. To work with this service in isolation, following the steps in this section.
-
-- **Start Parsing Service:**
-```bash
-make start-parsing-service
-```
-
-- **Stop Parsing Service:**
-```bash
-make stop-parsing-service
-```
-
-- **Check Parsing Service Status:**
-```bash
-make parsing-status
-```
-
-- **View Parsing Service Logs:**
-```bash
-make parsing-log
-```
-
-### Docker-based Setup
-
-To use the Docker-based setup:
-
-1. Ensure Docker is installed on your system.
-2. Build the Docker image:
-
-```bash
-make docker-build
-```
-
-3. Run a specific kit in the Docker container:
-```bash
-make docker-run-kit KIT=<kit_name>
-```
-Replace `<kit_name>` with the name of the starter kit you want to run (e.g., `function_calling`).
-
-4. To open a shell in the Docker container:
-```bash
-make docker-shell
-```
-
-### Cleanup
-
-To clean up all virtual environments created by the makefile and stop parsing services run the following command:
-```bash
-make clean
-```
-This command removes all virtual environments created with the makefile, stops the parsing service, and cleans up any temporary files.
-</details>
-
-<details>
-<summary>Troubleshooting</summary><br/>
-
-If you encounter issues while setting up or running the AI Starter Kit, here are some common problems and their solutions:
-
-### Python version issues
-
-If you're having problems with Python versions:
-
-1. Ensure you have pyenv installed: `make ensure-pyenv`
-2. Install the required Python versions: `make install-python-versions`
-3. If issues persist, check your system's Python installation and PATH settings.
-
-### Dependency conflicts
-
-If you're experiencing dependency conflicts:
-
-1. Try cleaning your environment: `make clean`
-2. Update the lock file: `poetry lock --no-update`
-3. Reinstall dependencies: `make install`
-
-### pikepdf installation issues
-
-If you encounter an error while installing `pikepdf`, such as:
-
-```
-ERROR: Failed building wheel for pikepdf
-Failed to build pikepdf
-```
-
-This is likely due to missing `qpdf` dependency. The Makefile should automatically install `qpdf` for you, but if you're still encountering issues:
-
-1. Ensure you have proper permissions to install system packages.
-2. If you're on macOS, you can manually install `qpdf` using Homebrew:
-   ```bash
-   brew install qpdf
-   ```
-3. On Linux, you can install it using your package manager, e.g., on Ubuntu:
-   ```
-   sudo apt-get update && sudo apt-get install -y qpdf
-   ```
-4. After installing `qpdf`, try running `make install` again.
-
-If you continue to face issues, please ensure your system meets all the requirements for building `pikepdf` and consider checking the [pikepdf documentation](https://pikepdf.readthedocs.io/en/latest/installation.html) for more detailed installation instructions.
-
-
-### Parsing service issues
-
-If the parsing service isn't starting or is behaving unexpectedly:
-
-1. Check its status: `make parsing-status`
-2. View its logs: `make parsing-log`
-3. Try stopping and restarting it: `make stop-parsing-service` followed by `make start-parsing-service`
-
-### System Dependencies Issues
-
-If you encounter issues related to Tesseract OCR or Poppler:
-
-1. Ensure the Makefile has successfully installed these dependencies.
-2. On macOS, you can manually install them using Homebrew:
- ```bash
-   brew install tesseract poppler
-   ```
-3. On Linux (Ubuntu/Debian), you can install them manually:
- ```bash
-   sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
-   ```
-4. On Windows, you may need to install these dependencies manually and ensure they are in your system PATH.
-
-### Docker-related Issues
-
-If you're using the Docker-based setup and encounter issues:
-
-1. Ensure Docker is properly installed and running on your system.
-2. Try rebuilding the Docker image: `make docker-build`
-3. Check Docker logs for any error messages.
-4. Ensure your firewall or antivirus is not blocking Docker operations.
-
-### General troubleshooting steps
-
-1. Ensure all prerequisites (Python, pyenv, Poetry) are correctly installed.
-2. Try cleaning and rebuilding the environment: `make clean all`
-3. Check for any error messages in the console output and address them specifically.
-4. Ensure your `.env` file is correctly set up in the ai-starter-kit root with all necessary environment variables.
-
-If you continue to experience issues, please [open an issue](https://github.com/sambanova/ai-starter-kit/issues/new) with details about your environment, the full error message, and steps to reproduce the problem.
-
-### Important Notes for Users
-
-- Ensure you have sufficient permissions to install software on your system.
-- The setup process may take several minutes, especially when installing Python versions or large dependencies.
-- If you encounter any issues during setup, check the error messages and ensure your system meets all prerequisites.
-- Always activate the base environment before navigating to and running a specific starter kit.
-- Some kits may require additional setup steps. Always refer to the specific README of the kit you're using.
-</details>
-
-**Note:** These AI Starter Kit code samples are provided "as-is," and are not production-ready or supported code. Bugfix/support will be on a best-effort basis only. Code may use third-party open-source software. You are responsible for performing due diligence per your organization policies for use in your applications.
+All the packages/tools are listed in the `requirements.txt` file in the project directory.

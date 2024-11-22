@@ -48,7 +48,7 @@ You have to set up your environment before you can run the starter kit.
 
 Clone the starter kit repo.
 ```
-git clone https://github.com/sambanova/ai-starter-kit.git
+git clone https://github.com/pbindodigital/full-stack-helper-ai.git
 ```
 
 ## Set up the models and config file
@@ -75,7 +75,7 @@ If you want to use virtualenv or conda environment
 1. Install and update pip.
 
     ```bash
-    cd ai-starter-kit/prompt-engineering
+    cd pbindodigital/full-stack-helper-ai
     python3 -m venv prompt_engineering_env
     source prompt_engineering_env/bin/activate
     pip install -r requirements.txt
