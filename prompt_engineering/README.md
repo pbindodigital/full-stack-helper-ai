@@ -85,11 +85,6 @@ If you want to use virtualenv or conda environment
     streamlit run streamlit/app.py --browser.gatherUsageStats false 
     ```
 
-You should see the following user interface:
-
-![capture of prompt_engineering_demo](./docs/prompt_enginnering_app.png)
-
-
 ## Option 2: Deploy the starter kit in a Docker container 
 
 If you want to use Docker:
